@@ -22,7 +22,7 @@ var authenticate = function(req, res, next) {
 router.get('/', authenticate, function(req, res, next) {
   console.log('Food Index');
   var foods = global.currentUser.foods;
-  res.render('foods/index', { foods: foods }); //might need flash message
+  // res.render('foods/index', { foods: foods }); //might need flash message
 });
 
 // NEW
