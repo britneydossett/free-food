@@ -16,14 +16,14 @@ var expressLayouts = require('express-ejs-layouts');
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var freeFood = require('./routes/free-food');
+var foods = require('./routes/foods');
 
 var Food = require('./models/food');
 
 var app = express();
 
 //connnect to database
-mongoose.connect('mongodb://localhost/free-food');
+mongoose.connect('mongodb://localhost/foods');
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
   process.exit(-1);
@@ -64,7 +64,7 @@ app.use(function(req, res, next) {
 //Routes
 app.use('/', routes);
 app.use('/users', users);
-app.use('/free-food', freeFood);
+app.use('/foods', foods);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

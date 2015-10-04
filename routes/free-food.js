@@ -21,8 +21,8 @@ var authenticate = function(req, res, next) {
 //INDEX
 router.get('/', authenticate, function(req, res, next) {
   console.log('Food Index');
-  var freeFood = global.currentUser.freeFood;
-  res.render('freeFood/index', { freeFood: freeFood }); //might need flash message
+  var foods = global.currentUser.foods;
+  res.render('foods/index', { foods: foods }); //might need flash message
 });
 
 // NEW
@@ -32,21 +32,21 @@ router.get('/new', authenticate, function(req, res, next) {
     address: '',
     user: []
   };
-  res.render('freeFood/new', { freeFood: freeFood });
+  res.render('foods/new', { foods: foods });
 });
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  var food = currentUser.freeFood.id(req.params.id);
+  var food = currentUser.foods.id(req.params.id);
   if (!food) return next(makeError(res, 'Document not found', 404));
-  res.render('freeFood/show', { freeFood: freeFood } );
+  res.render('foods/show', { foods: foods } );
 });
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
-  var food = currentUser.freeFood.id(req.params.id);
+  var food = currentUser.foods.id(req.params.id);
   if (!food) return next(makeError(res, 'Document not found', 404));
-  res.render('freeFood/edit', { freeFood: freeFood } );
+  res.render('foods/edit', { foods: foods } );
 });
 
 // CREATE
@@ -57,36 +57,36 @@ router.post('/', authenticate, function(req, res, next) {
     user: req.body.user
   };
   // Food.create(food, function(err, saved) {
-  currentUser.freeFood.push(food);
+  currentUser.foods.push(food);
   currentUser.save(function (err) {
     if (err) return next(err);
-    res.redirect('/freeFood');
+    res.redirect('/foods');
   });
 });
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
-  var food = currentUser.freeFood.id(req.params.id);
+  var food = currentUser.foods.id(req.params.id);
   if (!food) return next(makeError(res, 'Document not found', 404));
   else {
     food.name = req.body.name;
     food.address = req.body.address;
     currentUser.save(function(err) {
       if (err) return next(err);
-      res.redirect('/freeFood');
+      res.redirect('/foods');
     });
   }
 });
 
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {
-  var food = currentUser.freeFood.id(req.params.id);
+  var food = currentUser.foods.id(req.params.id);
   if (!food) return next(makeError(res, 'Document not found', 404));
-  var index = currentUser.freeFood.indexOf(food);
-  currentUser.freeFood.splice(index, 1);
+  var index = currentUser.foods.indexOf(food);
+  currentUser.foods.splice(index, 1);
   currentUser.save(function(err) {
     if (err) return next(err);
-    res.redirect('/freeFood');
+    res.redirect('/foods');
   });
 });
 
