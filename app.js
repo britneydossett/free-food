@@ -53,7 +53,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-// require('./config/passport/passport')(passport);
+require('./config/passport/passport')(passport);
 
 //middleware for currentUser in views and routes
 app.use(function(req, res, next) {
