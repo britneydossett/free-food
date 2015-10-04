@@ -20,6 +20,8 @@ var foods = require('./routes/foods');
 
 var Food = require('./models/food');
 
+// var expressLayouts = require('express-ejs-layouts')
+
 var app = express();
 
 //connnect to database
