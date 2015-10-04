@@ -16,9 +16,9 @@ var expressLayouts = require('express-ejs-layouts');
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var foods = require('./routes/foods');
+var foods = require('./routes/free-food');
 
-var Food = require('./models/food');
+// var Food = require('./models/food');
 
 // var expressLayouts = require('express-ejs-layouts')
 
@@ -55,7 +55,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-// require('./config/passport/passport')(passport);
+require('./config/passport/passport')(passport);
 
 //middleware for currentUser in views and routes
 app.use(function(req, res, next) {
