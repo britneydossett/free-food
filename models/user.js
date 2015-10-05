@@ -7,8 +7,8 @@ var UserSchema = new Schema({
   local: {
     email: String,
     password: String
-  },
-  foods: [Food.schema]
+  }
+  // foods: [Food.schema]
 });
 
 UserSchema.methods.encrypt = function(password) {
