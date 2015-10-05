@@ -43,16 +43,18 @@ router.get('/new', authenticate, function(req, res, next) {
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  var food = currentUser.foods.id(req.params.id);
-  if (!food) return next(makeError(res, 'Document not found', 404));
-  res.render('foods/show', { food: food } );
+  Food.findById(req.params.id, function(err, food) {
+     if (err) return next(err);
+     res.render('foods/show', { food: food });
+   });
 });
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
-  var food = currentUser.foods.id(req.params.id);
-  if (!food) return next(makeError(res, 'Document not found', 404));
-  res.render('foods/edit', { food: food } );
+  Food.findById(req.params.id, function(err, food) {
+     if (err) return next(err);
+      res.render('foods/edit', { food: food } );
+   });
 });
 
 // CREATE
@@ -74,26 +76,26 @@ router.post('/', authenticate, function(req, res, next) {
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
-  var food = currentUser.foods.id(req.params.id);
-  if (!food) return next(makeError(res, 'Document not found', 404));
+  Food.findById(req.params.id, function(err, food) {
+     if (err) return next(err);
   else {
     food.name = req.body.name;
     food.address = req.body.address;
-    currentUser.save(function(err) {
+    food.date = req.body.date;
+    food.time = req.body.time;
+    food.save(function(err) {
       if (err) return next(err);
       res.redirect('/foods');
     });
   }
 });
+});
 
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {
-  var food = currentUser.foods.id(req.params.id);
-  if (!food) return next(makeError(res, 'Document not found', 404));
-  var index = currentUser.foods.indexOf(food);
-  currentUser.foods.splice(index, 1);
-  currentUser.save(function(err) {
+  Food.findByIdAndRemove(req.params.id, function(err, food) {
     if (err) return next(err);
+    if (!food) return next(makeError(res, 'Document not found', 404));
     res.redirect('/foods');
   });
 });
