@@ -22,8 +22,7 @@ var authenticate = function(req, res, next) {
 router.get('/', authenticate, function(req, res, next) {
   console.log('Food Index');
   var foods = global.currentUser.foods;
-  // res.render('foods/index', { foods: foods }); //might need flash message
-  res.render('Hey')
+  res.render('foods/index', { foods: foods }); //might need flash message
 });
 
 // NEW
@@ -33,21 +32,21 @@ router.get('/new', authenticate, function(req, res, next) {
     address: '',
     user: []
   };
-  res.render('foods/new', { foods: foods });
+  res.render('foods/new', { food: food });
 });
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
   var food = currentUser.foods.id(req.params.id);
   if (!food) return next(makeError(res, 'Document not found', 404));
-  res.render('foods/show', { foods: foods } );
+  res.render('foods/show', { food: food } );
 });
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
   var food = currentUser.foods.id(req.params.id);
   if (!food) return next(makeError(res, 'Document not found', 404));
-  res.render('foods/edit', { foods: foods } );
+  res.render('foods/edit', { food: food } );
 });
 
 // CREATE

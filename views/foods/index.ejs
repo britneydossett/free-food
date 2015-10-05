@@ -1,0 +1,13 @@
+<div>
+  <h1>FREE FOOD EVENTS:</h1>
+
+  <% foods.forEach(function(food) { %>
+  <h4>
+    <form method="POST" action="/foods/<%= food._id %>?_method=DELETE">
+      <a href="/foods/<%= food._id %>"><%= food.name + ' - ' + food.address %></a>
+      <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+    </form>
+  </h4>
+  <% }) %>
+</div>
+<a href="/foods/new" class="btn btn-primary">New</a>

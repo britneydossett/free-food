@@ -19,8 +19,7 @@ function(req, email, password, callback) {
         newUser.local.password = newUser.encrypt(password);
 
         newUser.save(function(err){
-          if(err) return callback(err, false);
-          return callback(null, newUser);
+          return callback(err, newUser);
         });
       }
     });

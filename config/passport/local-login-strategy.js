@@ -1,14 +1,14 @@
 var localStrategy = require('passport-local').Strategy;
 var User = require('../../models/user');
 
-var Strategy = new localStrategy(
+var strategy = new localStrategy(
 {
   usernameField: 'email',
   passwordField: 'password',
-  pasReqToCallback: true
+  passReqToCallback: true
 },
 function(req, email, password, callback) {
-  user.findOne({'local.email' : email}, function(err, user) {
+  User.findOne({'local.email' : email}, function(err, user) {
     if(err) return callback(err);
     if(!user) {
       return callback(null, false, req.flash('error', 'Either your username or password is incorrect'));
@@ -20,4 +20,4 @@ function(req, email, password, callback) {
   });
 });
 
-module.export = Strategy;
+module.exports = strategy;

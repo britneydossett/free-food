@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 // GET /signup
 router.get('/signup', function(req, res, next) {
-  res.render('signup.ejs');
+  res.render('signup.ejs', { message: req.flash()});
 });
 
 // POST /signup
@@ -17,13 +17,15 @@ router.post('/signup', function(req, res, next) {
   var signUpStrategy = passport.authenticate('local-signup', {
     successRedirect : '/foods',
     failureRedirect : 'signup',
+    failureFlash : true
   });
   return signUpStrategy(req, res, next);
 });
 
 // GET /login
 router.get('/login', function(req, res, next) {
-  res.render('login.ejs');
+  res.render('login.ejs', { message: req.flash()
+  });
 });
 
 // POST /login
@@ -31,6 +33,7 @@ router.post('/login', function(req, res, next) {
   var loginProperty = passport.authenticate('local-login', {
     successRedirect : '/foods',
     failureRedirect : '/login',
+    failureFlash : true
   });
   return loginProperty(req, res, next);
 });
