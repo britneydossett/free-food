@@ -7,7 +7,7 @@ var UserSchema = new Schema({
   local: {
     email: String,
     password: String
-  },
+  }
 });
 
 UserSchema.methods.encrypt = function(password) {

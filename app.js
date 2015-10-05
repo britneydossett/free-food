@@ -18,7 +18,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var foods = require('./routes/free-food');
 
-// var Food = require('./models/food');
+var Food = require('./models/food');
 
 // var expressLayouts = require('express-ejs-layouts')
 
