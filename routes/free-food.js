@@ -20,9 +20,13 @@ var authenticate = function(req, res, next) {
 
 //INDEX
 router.get('/', authenticate, function(req, res, next) {
-  console.log('Food Index');
-  var foods = global.currentUser.foods;
-  res.render('foods/index', { foods: foods }); //might need flash message
+  Food.find({ owner: currentUser }, function(err, foods) {
+     if (err) return next(err);
+     res.render('foods/index', { foods: foods });
+   });
+  // console.log('Food Index');
+  // var foods = global.currentUser.foods;
+  // res.render('foods/index', { foods: foods }); //might need flash message
 });
 
 // NEW
@@ -30,6 +34,8 @@ router.get('/new', authenticate, function(req, res, next) {
   var food = {
     name: '',
     address: '',
+    date: Date,
+    time: String,
     user: []
   };
   res.render('foods/new', { food: food });
@@ -54,11 +60,13 @@ router.post('/', authenticate, function(req, res, next) {
   var food = {
     name: req.body.name,
     address: req.body.address,
-    user: req.body.user
+    date: req.body.date,
+    time: req.body.time,
+    owner: currentUser._id
   };
-  // Food.create(food, function(err, saved) {
-  currentUser.foods.push(food);
-  currentUser.save(function (err) {
+  Food.create(food, function(err, saved) {
+  // currentUser.foods.push(food);
+  // currentUser.save(function (err) {
     if (err) return next(err);
     res.redirect('/foods');
   });
