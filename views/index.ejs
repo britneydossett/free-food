@@ -1,3 +1,123 @@
 <div class="jumbotron">
   <h1>Welcome to <%= title %></h1>
 </div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+
+      map.addMarker({
+        lat: -12.043333,
+        lng: -77.028333,
+        title: 'Lima',
+        click: function(e) {
+        alert('You clicked in this marker');
+      }
+
+      infoWindow: {
+        content: '<p>HTML Content</p>'
+      }
+
+      url = GMaps.staticMapURL({
+      size: [610, 300],
+      lat: -12.043333,
+      lng: -77.028333,
+      markers: [
+      {lat: -12.043333, lng: -77.028333},
+      {lat: -12.045333, lng: -77.034,
+        size: 'small'},
+      {lat: -12.045633, lng: -77.022,
+      color: 'blue'}
+      ]
+    });
+
+      $('<img/>').attr('src', url)
+        .appendTo('#map');
+    });
+
+      map = new GMaps({
+        div: '#map',
+        zoom: 16,
+        lat: -12.043333,
+        lng: -77.028333,
+        click: function(e) {
+          alert('click');
+        },
+        dragend: function(e) {
+          alert('dragend');
+        }
+    });
+
+
+    </style>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+
+    for (var i = 0; i < addresses.length; i++) {
+      var address = addresses[i];
+      GMaps.geocode({
+        address: address,
+        callback: function(results, status) {
+          if (status == 'OK') {
+            var latlng = results[0].geometry.location;
+            map.addMarker({
+              lat: latlng.lat(),
+              lng: latlng.lng()
+            });
+          }
+        }
+      });
+    }
+
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng( -12.043333,-77.028333),
+        map: map,
+        title: 'Hello World!'
+    });
+
+
+
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <script>
+      function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBgxjS_4DQoU0LYssKsMzR_ehSLE9gik4&signed_in=true&callback=initMap">
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
