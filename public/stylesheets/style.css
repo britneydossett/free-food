@@ -1,4 +1,18 @@
-html,
+body {
+  /*/*padding: 50px;*/
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.food-form {
+  max-width: 400px;
+}*/
+
+
+/*html,
 body,
 #google_canvas {
   height:100%;
@@ -54,3 +68,4 @@ body {
   color:#2BA6CB;
   text-decoration:none;
 }
+*/
