@@ -1,10 +1,12 @@
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
+var Food = require('../models/food');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Free Food'});
+  var foods = Food.find({});
+  res.render('index', { title: 'Free Food', foods: foods });
 });
 
 // GET /signup

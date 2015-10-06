@@ -1,0 +1,20 @@
+{
+  "name": "free-food",
+  "version": "0.0.0",
+  "homepage": "https://github.com/britneydossett/free-food",
+  "authors": [
+    "Britney Dossett <britneydossett@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
