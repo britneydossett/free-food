@@ -13,6 +13,9 @@ function(req, email, password, callback) {
       if(user) {
         return callback(null, false, req.flash('error', 'This email is already taken.'));
       }
+      if (password !== req.body.confirmPassword) {
+        return callback(null, false, req.flash('error', 'Password does not match.'));
+      }
       else {
         var newUser = new User();
         newUser.local.email = email;

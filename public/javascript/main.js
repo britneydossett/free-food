@@ -1,14 +1,3 @@
-<div class="jumbotron">
-  <h1>Welcome to <%= title %></h1>
-</div>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="/stylesheet/style.css"
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-
     for (var i = 0; i < addresses.length; i++) {
       var address = addresses[i];
       GMaps.geocode({
@@ -43,9 +32,6 @@
         var map = new google.maps.Map(mapCanvas, mapOptions)
       }
       google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
-    <script>
       function initMap() {
         var myLatLng = {lat: -25.363, lng: 131.044};
 
@@ -60,13 +46,3 @@
           title: 'Hello World!'
         });
       }
-    </script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBgxjS_4DQoU0LYssKsMzR_ehSLE9gik4&signed_in=true&callback=initMap">
-    </script>
-  </head>
-  <body>
-    <div id="map"></div>
-  </body>
-</html>
