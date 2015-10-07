@@ -1,12 +1,26 @@
- <div>
-   <h1>FREE FOOD EVENTS:</h1>
-   <% foods.forEach(function(food) { %>
-   <h4>
-     <form method="POST" action="/foods/<%= food._id %>?_method=DELETE">
-      <a href="/foods/<%= food._id %>"><%= food.name + ' - ' + food.address + ' - ' + food.date.toDateString() + ' - ' + food.time %></a>
-       <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-     </form>
-   </h4>
+<div>
+<h1>FREE FOOD EVENTS:</h1>
+</hr>
+  <a href="/foods/new" class="btn btn-primary">New</a>
+
+  <% foods.forEach(function(food) { %>
+  <form method="POST" action="/foods/<%= food._id %>?_method=DELETE">
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title"><%= food.name %></h2>
+    </div>
+    <div class="panel-body">
+      Address: <%= food.address %></br>
+      Date: <%= food.date.toDateString() %></br>
+      Time: <%= food.time %></br>
+    </div>
+    <a href="/foods/<%= food._id %>" class="btn btn-xs btn-warning">Edit</a>
+    <button type="submit" class="btn btn-xs btn-danger">Delete</button>
   <% }); %>
- </div>
- <a href="/foods/new" class="btn btn-primary">New</a>
+  </div>
+  </form>
+
+</div>
+
+
