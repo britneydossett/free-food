@@ -1,0 +1,117 @@
+html,
+body,
+#google_canvas {
+  height:100%;
+  color: blue;
+  background-color: lightgray;
+}
+#google_canvas h1 {
+  font-size:16px;
+}
+
+#google_canvas h2 {
+  font-size:14px;
+  font-weight:300;
+}
+
+*,
+*:after,
+*:before {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body {
+  font:400 20px/1.4 'Arial', Helvetica, sans-serif;
+  background: #246D78;
+}
+
+.wrapper {
+  max-width:1280px;
+  margin:0 auto;
+}
+
+.jumbotron {
+    <img src="images/sandwich.jpg", background-image: cover>
+
+    overflow: hidden;
+}
+
+.header {
+  padding:15px 25px;
+  margin:0 0 20px;
+  background:#FFF;
+  border-left:5px solid #2BA6CB;
+  overflow:hidden;
+}
+/*.logo {
+  float:left;
+}*/
+
+<br>
+.nav {
+  float:right;
+  margin:12px 0;
+  list-style:none;
+}
+.nav-link {
+
+}
+.nav-link a {
+  color:#2BA6CB;
+  text-decoration:none;
+}
+
+      #map {
+        width: 800px;
+        height: 400px;
+        position: static;
+        margin: auto;
+      }
+
+      map.addMarker({
+        lat: -12.043333,
+        lng: -77.028333,
+        title: 'Lima',
+        click: function(e) {
+        alert('You clicked in this marker');
+      }
+
+      infoWindow: {
+        content: '<p>HTML Content</p>'
+      }
+
+      url = GMaps.staticMapURL({
+      size: [610, 300],
+      lat: -12.043333,
+      lng: -77.028333,
+      markers: [
+      {lat: -12.043333, lng: -77.028333},
+      {lat: -12.045333, lng: -77.034,
+        size: 'small'},
+      {lat: -12.045633, lng: -77.022,
+      color: 'blue'}
+      ]
+    });
+
+      $('<img/>').attr('src', url)
+        .appendTo('#map');
+    });
+
+      map = new GMaps({
+        div: '#map',
+        zoom: 16,
+        lat: -12.043333,
+        lng: -77.028333,
+        click: function(e) {
+          alert('click');
+        },
+        dragend: function(e) {
+          alert('dragend');
+        }
+    });
