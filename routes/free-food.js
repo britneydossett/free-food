@@ -29,6 +29,14 @@ router.get('/', authenticate, function(req, res, next) {
   // res.render('foods/index', { foods: foods }); //might need flash message
 });
 
+//Create an API (hint: project 4)
+router.get('/api/foods', function(req, res, next) {
+  Food.find({}, function(err, foods) {
+     if (err) return next(err);
+     res.send(foods);
+   });
+});
+
 // NEW
 router.get('/new', authenticate, function(req, res, next) {
   var food = {

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var FoodSchema = new Schema ({
   name: String,
   address: String,
-  date: {type: Date, required: true},
+  date: { type: Date, required: true },
   time: String,
   owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
   confirmations: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
