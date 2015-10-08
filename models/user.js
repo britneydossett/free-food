@@ -5,9 +5,11 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
   local: {
-    email: String,
+    username: String,
     password: String
-  }
+  },
+  email: String,
+  account: String
 });
 
 UserSchema.methods.encrypt = function(password) {
