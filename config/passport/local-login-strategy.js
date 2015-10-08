@@ -3,12 +3,12 @@ var User = require('../../models/user');
 
 var strategy = new localStrategy(
 {
-  usernameField: 'email',
+  usernameField: 'username',
   passwordField: 'password',
   passReqToCallback: true
 },
-function(req, email, password, callback) {
-  User.findOne({'local.email' : email}, function(err, user) {
+function(req, username, password, callback) {
+  User.findOne({'local.username' : username.toLowerCase()}, function(err, user) {
     if(err) return callback(err);
     if(!user) {
       return callback(null, false, req.flash('error', 'Either your username or password is incorrect'));
