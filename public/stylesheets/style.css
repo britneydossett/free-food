@@ -87,6 +87,7 @@ body {
 
       infoWindow: {
         content: '<p>HTML Content</p>'
+        color: #222;
       }
 
       url = GMaps.staticMapURL({
