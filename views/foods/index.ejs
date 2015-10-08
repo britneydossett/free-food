@@ -15,8 +15,33 @@
       Date: <%= food.date.toDateString() %></br>
       Time: <%= food.time %></br>
     </div>
+
     <a href="/foods/<%= food._id %>" class="btn btn-xs btn-warning">Edit</a>
     <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+    <a href="/foods/<%= food._id %>/edit" class="btn btn-xs btn-warning">Edit</a>
+      <a class="btn btn-xs btn-danger" href="#normalModal" data-toggle="modal">
+        Delete
+      </a>
+
+      <div id="normalModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Delete event</h4>
+            </div>
+            <div class="modal-body">
+              <p>Address: <%= food.address %></p></br>
+              <p>Date: <%= food.date.toDateString() %></p></br>
+              <p>Time: <%= food.time %></p></br>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-md btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-md btn-danger">Delete</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
   </div>
   </form>
   <% }); %>
