@@ -1,6 +1,7 @@
 <div>
 <h1>FREE FOOD EVENTS:</h1>
 </hr>
+
   <a href="/foods/new" class="btn btn-primary">New</a>
 
   <% foods.forEach(function(food) { %>
@@ -12,12 +13,9 @@
     </div>
     <div class="panel-body">
       Address: <%= food.address %></br>
-      Date: <%= food.date.toDateString() %></br>
+      Date: <%= food.date %></br>
       Time: <%= food.time %></br>
     </div>
-
-    <a href="/foods/<%= food._id %>" class="btn btn-xs btn-warning">Edit</a>
-    <button type="submit" class="btn btn-xs btn-danger">Delete</button>
     <a href="/foods/<%= food._id %>/edit" class="btn btn-xs btn-warning">Edit</a>
       <a class="btn btn-xs btn-danger" href="#normalModal" data-toggle="modal">
         Delete
