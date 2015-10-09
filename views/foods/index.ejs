@@ -1,10 +1,11 @@
 <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-
 <div>
-<h1>FREE FOOD EVENTS:</h1>
-</hr>
-
-  <a href="/foods/new" class="btn btn-primary">New</a>
+  <div class="container-fluid text-center">
+    <h1>My Events:</h1>
+    </hr>
+    <a href="/foods/new" class="btn btn-lg btn-primary">New</a>
+  </div>
+  </hr>
 
   <% foods.forEach(function(food) { %>
   <form method="POST" action="/foods/<%= food._id %>?_method=DELETE">
@@ -18,8 +19,8 @@
       Date: <%= food.date.toDateString() %></br>
       Time: <%= food.time %></br>
     </div>
-    <a href="/foods/<%= food._id %>/edit" class="btn btn-xs btn-warning">Edit</a>
-      <a class="btn btn-xs btn-danger" href="#normalModal" data-toggle="modal">
+    <a href="/foods/<%= food._id %>/edit" class="btn btn-md btn-warning">Edit</a>
+      <a class="btn btn-md btn-danger" href="#normalModal" data-toggle="modal">
         Delete
       </a>
 
