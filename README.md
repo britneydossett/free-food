@@ -1,1 +1,1 @@
-
+Welcome to the Free Food App! We help businesses and customers connect with each other through free food events held by local businesses. Finding an event is easy. Just check the map to see all the local businesses that are hosting free food events near you.
