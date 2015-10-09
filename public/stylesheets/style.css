@@ -30,6 +30,11 @@ body,
   max-width: 850px;
 }
 
+#top-image {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 *,
 *:after,
 *:before {
@@ -50,6 +55,10 @@ body {
   /*background: #000;*/
 }
 
+.jumbotron {
+  background-color: rgba(0,0,0,0.5);
+}
+
 /*Separates Food Event Panels*/
 .panel-success {
   margin: 20px 0px 20px 0px;
@@ -66,7 +75,12 @@ body {
   font-size: 45px;
   padding: 25px 0 0 50px;
   font-family:'Poiret One', cursive;
+  font-family: 'Indie Flower', cursive, Gadget, sans-serif;
   font-style: bold;
+}
+
+.first-letter {
+  font-size: 1.6em;
 }
 
 .head {
@@ -86,6 +100,9 @@ body {
   float:left;
 }
 
+.fflogo {
+  font-family: 'Indie Flower', cursive, Gadget, sans-serif;
+}
 
 .carousel {
   margin: 0 0 30px 0;
