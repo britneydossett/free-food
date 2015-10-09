@@ -1,4 +1,50 @@
-<div class="container">
+<!doctype html>
+<style>
+.navbar-default {
+ position: absolute;
+ width: 100%;
+ opacity: 0.9;
+ z-index: 2;
+ margin: 0px 0px 0px 0px;
+ top: 0;
+}
+</style>
+<header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Welcome to Free Food</a>
+  </div>
+
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          <% if (currentUser) { %>
+            <li class="active"><a href="/foods">Free Food<span class="sr-only">(current)</span></a></li>
+          <% } %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if (currentUser) { %>
+            <li class="active"><a href="#">My Profile<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/logout">Logout<span class="sr-only">(current)</span></a></li>
+          <% } else { %>
+            <li class="active"><a href="/login">Login<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/signup">Signup<span class="sr-only">(current)</span></a></li>
+          <% } %>
+        </ul>
+    </div>
+  </div>
+</nav>
+</header>
+</html>
+
+<div class="container-fluid">
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -6,37 +52,30 @@
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="/images/freefood1.jpg" alt="...">
+      <img src="/images/freefoodpicture1.jpg" alt="...">
       <!-- <div class="carousel-caption">
           <h3></h3>
       </div> -->
     </div>
     <div class="item">
-      <img src="/images/freefood2.jpg" alt="...">
+      <img src="/images/freefoodpicture1.jpg" alt="...">
       <!-- <div class="carousel-caption">
           <h3></h3>
       </div> -->
     </div>
     <div class="item">
-      <img src="/images/freefood3.jpg" alt="...">
+      <img src="/images/freefoodpicture1.jpg" alt="...">
       <!-- <div class="carousel-caption">
           <h3></h3>
       </div> -->
     </div>
     <div class="item">
-      <img src="/images/freefood4.jpg" alt="...">
-      <!-- <div class="carousel-caption">
-          <h3></h3>
-      </div> -->
-    </div>
-    <div class="item">
-      <img src="/images/freefood5.jpg" alt="...">
+      <img src="/images/freefoodpicture1.jpg" alt="...">
       <!-- <div class="carousel-caption">
           <h3></h3>
       </div> -->
@@ -59,9 +98,10 @@
 <section id="wrapper">
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
+<div class="container" id="gmap">
     <article>
-
     </article>
+</div>
 
 <script src="./javascripts/main.js"></script>
 </section>
