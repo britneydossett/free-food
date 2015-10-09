@@ -24,15 +24,15 @@ var Food = require('./models/food');
 
 var app = express();
 
-// //connnect to database
-// mongoose.connect('mongodb://localhost/foods');
-// mongoose.connection.on('error', function(err) {
-//   console.error('MongoDB connection error: ' + err);
-//   process.exit(-1);
-// });
-// mongoose.connection.once('open', function() {
-//   console.log("Mongoose has connected to MongoDB.");
-// });
+//connnect to database
+mongoose.connect('mongodb://localhost/foods');
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+});
+mongoose.connection.once('open', function() {
+  console.log("Mongoose has connected to MongoDB.");
+});
 
 // Connect to database
 if (app.get('env') === 'development') {
