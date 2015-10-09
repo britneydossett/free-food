@@ -43,9 +43,11 @@ function success(position) {
       success : function(response) {
           response.forEach(function(data) {
             var place = JSON.stringify(data.address);
-            // var name = JSON.stringify(data.name);
+            var name = data.name;
+            var date = data.date.slice(0, 10);
+            var time = data.time;
             console.log("Place = " + place);
-            codeAddress(place);
+            codeAddress(place, name, date, time);
             // codeName(name);
           })
          }
@@ -53,7 +55,7 @@ function success(position) {
     }
 fetchPlaces();
 
-  function codeAddress(address) {
+  function codeAddress(address, name, date, time) {
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           var marker = new google.maps.Marker({
@@ -62,7 +64,7 @@ fetchPlaces();
               title: "You made it!!!!!!!!!"
           });
           var infowindow = new google.maps.InfoWindow({
-            content: "<div style='color:black'>" + 'Address: ' + address + "</br>" + "</div>"
+            content: "<div style='color:black; font-size: 1.2em'>" + 'Event Name: ' + name + "</br>" + 'Address: ' + address.replace('"', '').slice(0, -1) + "</br>" + 'Date: ' + date + "</br>" + 'Time: ' + time + "</div>"
           });
           marker.addListener('click', function() {
             infowindow.open(map, marker);
