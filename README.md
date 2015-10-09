@@ -21,4 +21,8 @@ We envisioned this app to be a platform to allow businesses to promote their fre
 
 We had a few hurdles to overcome. We did have database problems to work out, getting the google map API to render event markers and Bootstrap styling headaches. 
 
-Here are the links 
+Here are the links:
+<ol>
+1. Trello: https://trello.com/b/kdpPrg7r/free-food
+2. Mock-up: https://gomockingbird.com/projects/6cnc9a2/4gXVnC
+</ol>
