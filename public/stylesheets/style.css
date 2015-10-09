@@ -11,9 +11,9 @@ body,
   font-weight:300;
 }
 
-#carousel-example-generic {
+/*#carousel-example-generic {
   min-width: 1350px;
-}
+}*/
 
 #left-carousel-control {
   margin: 0;
@@ -30,6 +30,11 @@ body,
   max-width: 850px;
 }
 
+#top-image {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 *,
 *:after,
 *:before {
@@ -44,10 +49,12 @@ body,
 }
 body {
 
-  font:400 13px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font:'Helvetica Neue', Helvetica, Arial, sans-serif;
   background:#333;
-  font:400 20px/1.4 'Arial', Helvetica, sans-serif;
-  /*background: #000;*/
+}
+
+.jumbotron {
+  background-color: rgba(0,0,0,0.5);
 }
 
 /*Separates Food Event Panels*/
@@ -59,14 +66,18 @@ body {
 .wrapper {
   max-width:1280px;
   margin:0 auto;
+  margin-top: 100px;
 }
 
 /*Index Page: Welcome to Free Food*/
 .navbar-brand {
   font-size: 45px;
   padding: 25px 0 0 50px;
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family: 'Indie Flower', cursive, Gadget, sans-serif;
   font-style: bold;
+}
+.first-letter {
+  font-size: 1.6em;
 }
 
 .header {
@@ -81,10 +92,13 @@ body {
   float:left;
 }
 
+.fflogo {
+  font-family: 'Indie Flower', cursive, Gadget, sans-serif;
+}
 
-.carousel {
+/*.carousel {
   margin: 0 0 30px 0;
-  width: 100%;
+  width: 100%;*/
 }
 
 .footer {
@@ -154,3 +168,4 @@ body {
           alert('dragend');
         }
     });
+
