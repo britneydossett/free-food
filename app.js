@@ -24,7 +24,7 @@ var Food = require('./models/food');
 
 var app = express();
 
-// //connnect to database
+//connnect to database
 // mongoose.connect('mongodb://localhost/foods');
 // mongoose.connection.on('error', function(err) {
 //   console.error('MongoDB connection error: ' + err);
