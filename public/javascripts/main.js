@@ -43,8 +43,10 @@ function success(position) {
       success : function(response) {
           response.forEach(function(data) {
             var place = JSON.stringify(data.address);
+            // var name = JSON.stringify(data.name);
             console.log("Place = " + place);
             codeAddress(place);
+            // codeName(name);
           })
          }
       })
@@ -60,7 +62,7 @@ fetchPlaces();
               title: "You made it!!!!!!!!!"
           });
           var infowindow = new google.maps.InfoWindow({
-            content: "<div style='color:black'>" + 'Address: ' + address + "</br>" +  "</div>"
+            content: "<div style='color:black'>" + 'Address: ' + address + "</br>" + "</div>"
           });
           marker.addListener('click', function() {
             infowindow.open(map, marker);

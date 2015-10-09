@@ -1,3 +1,5 @@
+<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
 <div>
 <h1>FREE FOOD EVENTS:</h1>
 </hr>
@@ -13,7 +15,7 @@
     </div>
     <div class="panel-body">
       Address: <%= food.address %></br>
-      Date: <%= food.date %></br>
+      Date: <%= food.date.toDateString() %></br>
       Time: <%= food.time %></br>
     </div>
     <a href="/foods/<%= food._id %>/edit" class="btn btn-xs btn-warning">Edit</a>
@@ -30,7 +32,7 @@
             </div>
             <div class="modal-body">
               <p>Address: <%= food.address %></p></br>
-              <p>Date: <%= food.date.toDateString() %></p></br>
+              <p>Date: <%= food.date.toISOString().slice(0,10) %></p></br>
               <p>Time: <%= food.time %></p></br>
             </div>
             <div class="modal-footer">

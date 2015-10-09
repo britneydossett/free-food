@@ -3,11 +3,9 @@ body,
 #google_canvas {
   height:100%;
 }
-
 #google_canvas h1 {
   font-size:16px;
 }
-
 #google_canvas h2 {
   font-size:14px;
   font-weight:300;
@@ -45,13 +43,17 @@ body,
   text-rendering:optimizeLegibility;
 }
 body {
-  font:400 20px/1.4 'Arial', Helvetica, sans-serif;
+
+  font:400 19px/1.8 'Poiret One', cursive;
+  background:#333;
+  font:400 25px/1.4 'Poiret One', cursive;
   /*background: #000;*/
 }
 
 /*Separates Food Event Panels*/
 .panel-success {
   margin: 20px 0px 20px 0px;
+
 }
 
 .wrapper {
@@ -63,21 +65,32 @@ body {
 .navbar-brand {
   font-size: 45px;
   padding: 25px 0 0 50px;
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family:'Poiret One', cursive;
   font-style: bold;
+}
+
+.head {
+  font-family:'Poiret One', cursive;
 }
 
 .header {
   padding:15px 25px;
+  font-family:'Poiret One', cursive;
   margin:0 0 20px;
   background:#FFF;
   border-left:5px solid #2BA6CB;
   overflow:hidden;
 }
 
+.logo {
+  float:left;
+}
+
+
 .carousel {
   margin: 0 0 30px 0;
   width: 100%;
+  font-family:'Poiret One', cursive;
 }
 
 .footer {
@@ -86,10 +99,12 @@ body {
   overflow: hidden;
 }
 
+
 .nav {
   float:right;
   margin:12px 0;
   list-style:none;
+  font-family:'Poiret One', cursive;
 }
 .nav-link {
 
@@ -101,10 +116,8 @@ body {
 }
 
       #map {
-        width: 800px;
+        width: 500px;
         height: 400px;
-        position: static;
-        margin: auto;
       }
 
       map.addMarker({
@@ -117,7 +130,6 @@ body {
 
       infoWindow: {
         content: '<p>HTML Content</p>'
-        color: #222;
       }
 
       url = GMaps.staticMapURL({
