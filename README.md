@@ -1,4 +1,4 @@
-Free Food
+Free Food App
 
 Welcome to the Free Food App! We help businesses and customers connect with each other through free food events held by local businesses. Finding an event is easy. Just check the map to see all the local businesses that are hosting free food events near you.
 
@@ -8,12 +8,19 @@ Team members: Britney Dossett, Sule Stone and Cynthia Hanna
 For our project 3, we used the following technologies:
 <ol>
 1. Express
+</br>
 2. Node
+</br>
 3. MongoDB/Mongoose
+</br>
 4. Passport
+</br>
 5. Google Maps API
+</br>
 6. Bootstrap
+</br>
 7. Heroku
+</br>
 8. Bower
 </ol>
 
