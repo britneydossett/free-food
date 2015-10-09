@@ -37,9 +37,6 @@ function success(position) {
 // fetch Places JSON from /data/places
 // loop through and populate the map with markers
   function fetchPlaces() {
-    // var infowindow =  new google.maps.InfoWindow({
-    //     content: ''
-    // });
     $.ajax({
       url : 'http://127.0.0.1:3000/foods/api/foods',
       dataType : 'json',
@@ -49,15 +46,10 @@ function success(position) {
             console.log("Place = " + place);
             codeAddress(place);
           })
-            // bindInfoWindow(marker, map, infowindow, '<b>'+ places.name + "</b><br>" + places.geo_name);
-            // // not currently used but good to keep track of markers
-            // markers.push(marker);
          }
       })
     }
 fetchPlaces();
-
-
 
   function codeAddress(address) {
       geocoder.geocode( { 'address': address}, function(results, status) {
@@ -68,10 +60,10 @@ fetchPlaces();
               title: "You made it!!!!!!!!!"
           });
           var infowindow = new google.maps.InfoWindow({
-          content: 'Address: ' + address
+            content: "<div style='color:black'>" + 'Address: ' + address + "</br>" +  "</div>"
           });
           marker.addListener('click', function() {
-          infowindow.open(map, marker);
+            infowindow.open(map, marker);
           });
         } else {
           alert("Geocode was not successful for the following reason: " + status);
