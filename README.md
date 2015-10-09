@@ -6,6 +6,7 @@ General Assembly Atlanta WDI Project 3
 Team members: Britney Dossett, Sule Stone and Cynthia Hanna
 
 For our project 3, we used the following technologies:
+<ol>
 1. Express
 2. Node
 3. MongoDB/Mongoose
@@ -14,6 +15,7 @@ For our project 3, we used the following technologies:
 6. Bootstrap
 7. Heroku
 8. Bower
+</ol>
 
 We envisioned this app to be a platform to allow businesses to promote their free food events, and an easy way for customers to find events near them. To accomplish this, we built a Food Model and a User Model. Because of time constraints, the User Model currently encapsulates both types of users: business and individual. Eventually, these will be separated. We also would like to allow individuals to rate the food.
 
