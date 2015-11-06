@@ -74,6 +74,10 @@ body {
   margin-top: 100px;
 }
 
+#food-map {
+  padding-top: 50px;
+}
+
 
 /*Index Page: Welcome to Free Food*/
 .navbar-brand {
