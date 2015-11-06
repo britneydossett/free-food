@@ -4,7 +4,7 @@ function success(position) {
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
   mapcanvas.style.height = '550px';
-  mapcanvas.style.width = '850px';
+  mapcanvas.style.width = '100%';
 
   document.querySelector('article').appendChild(mapcanvas);
 
@@ -38,7 +38,7 @@ function success(position) {
 // loop through and populate the map with markers
   function fetchPlaces() {
     $.ajax({
-      url : 'http://127.0.0.1:3000/foods/api/foods',
+      url : '/foods/api/foods',
       dataType : 'json',
       success : function(response) {
           response.forEach(function(data) {
