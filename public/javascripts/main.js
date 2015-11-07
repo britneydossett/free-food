@@ -16,7 +16,7 @@ function success(position) {
     {name: "Styled Map"});
 
   var options = {
-    zoom: 14,
+    zoom: 10,
     center: coords,
     mapTypeControl: false,
     navigationControlOptions: {
